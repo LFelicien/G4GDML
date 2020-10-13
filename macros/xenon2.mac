@@ -1,0 +1,41 @@
+/gps/particle gamma
+#/gps/energy 2 Mev
+/gps/ene/type Gauss
+/gps/ene/mono 2 MeV
+/gps/ene/sigma 2. keV
+
+# source
+/gps/pos/type Volume
+/gps/pos/shape Sphere
+/gps/pos/centre 0. 0. 0. m
+/gps/pos/radius 200 cm
+#/gps/pos/confine Tracker_PV
+#/gps/pos/confine Cavity_PV
+/gps/pos/confine Cloud_PV
+# confine to physical volume "Sphere_phys"
+
+# angular distribution
+/gps/direction 0 0 -1
+
+
+
+#histo manager
+/analysis/setFileName xenon
+/analysis/h1/set 1 6000 0.00 3000. keV
+/analysis/h1/set 2 100 0 240 cm
+/analysis/h1/set 3 110 -1.1 1.1 none  #cos(theta)
+/analysis/h1/set 4 130 -15  375 deg   #phi
+/analysis/h1/set 5 600 0. 0.4 MeV #edep
+/analysis/h1/set 6 600 0. 0.4 MeV #edep
+/analysis/h1/set 7 600 0. 0.4 MeV #edep
+/analysis/h2/set 1 100 -120 120 cm none linear 100 -10 10 cm none linear #x-y
+/analysis/h2/set 2 100 -120 120 cm none linear 100 -10 10 cm none linear #y-z
+/analysis/h2/set 3 100 -120 120 cm none linear 100 -10 10 cm none linear #z-x
+/analysis/h2/set 6 100 -120 120 cm none linear 100 -120 120 cm none linear #z-y
+/analysis/h2/set 4 120 0 360 deg none linear 100 -1 1 none none linear
+
+/run/printProgress 1000
+/run/beamOn 5000000
+
+
+
