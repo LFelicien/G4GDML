@@ -65,6 +65,9 @@
 		<element name="lead" formula="Pb" Z="82">
 			<atom value="207.2"/>
 		</element>
+		<element name="xenon" formula="Xe" Z="54">
+		<atom value="131.3"/>
+		</element>
 		<material name="VACUUM" formula="VACUUM">
 			<D value ="1E-25" unit="g/cm3"/>
 			<fraction n="1.0" ref="videRef"/>
@@ -167,12 +170,16 @@
    <fraction n="0.7" ref="nitrogen"/>
    <fraction n="0.3" ref="oxygen"/>
   </material>
+  <material name="Xenon">
+   <D value="5.887" unit="mg/cm3"/>
+   <fraction n="1." ref="xenon"/>
+  </material>
 	</materials>
 <solids>
   <box  lunit="m" name="WorldBox" x="6" y="6" z="6" />
   <box  lunit="m" name="Cavity_1" x="2.4" y="2.4" z="2.4" />
   <box  lunit="m" name="Cavity_2" x="1.8" y="1.8" z="1.8" />
-  <box  lunit="cm" name="STracker" x="10" y="10" z="2" />
+  <box  lunit="cm" name="STracker" x="20" y="20" z="10" />
   <tube lunit="cm" name="t100" z="210.0" rmax="30.0" deltaphi="2.*pi"/>
   <subtraction name="sub0">
    <first ref="Cavity_1"/> <second ref="t100"/>
@@ -182,15 +189,19 @@
    <first ref="sub0"/> <second ref="Cavity_2"/>
    <positionref ref="center"/> 
   </subtraction>
+  <union name="Cavity_3">
+  <first ref="Cavity_2"/> <second ref="t100"/>
+   <positionref ref="center"/> 
+  </union>
+  <subtraction name="Cavity_4">
+   <first ref="Cavity_3"/> <second ref="STracker"/>
+   <positionref ref="Tracker_pos"/>
+  </subtraction>
+  
    
 
 </solids>
 <structure>
-         <volume name="Tube">
-            <materialref ref="SILICON"/>
-            <solidref ref="t100"/>
-            <auxiliary auxtype="SensitiveVolume" auxvalue="true"/>
-        </volume>
         <volume name="Tracker">
             <materialref ref="SILICON"/>
             <solidref ref="STracker"/>
@@ -202,22 +213,22 @@
             <auxiliary auxtype="SensitiveVolume" auxvalue="true"/>
         </volume>
         <volume name="Cloud">
-            <materialref ref="Air"/>
-            <solidref ref="Cavity_2"/>
+            <materialref ref="Xenon"/>
+            <solidref ref="Cavity_4"/>
             <auxiliary auxtype="SensitiveVolume" auxvalue="true"/>
         </volume>
         <volume name="World">
             <materialref ref="Air"/>
             <solidref ref="WorldBox"/>
             <physvol>
-                <volumeref ref="Tracker"/>
-                <positionref ref="Tracker_pos"/>
-            </physvol>
-            <physvol>
                 <volumeref ref="Cavity"/>
             </physvol>
             <physvol>
                 <volumeref ref="Cloud"/>
+            </physvol>
+            <physvol>
+                <volumeref ref="Tracker"/>
+                <positionref ref="Tracker_pos"/>
             </physvol>
         </volume>
     </structure>
