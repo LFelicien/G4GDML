@@ -1,9 +1,0 @@
-
-
-# Change the default number of threads (in multi-threaded mode)
-/run/numberOfThreads 4
-#
-# Initialize kernel
-/run/initialize
-#
-/control/execute vis.mac

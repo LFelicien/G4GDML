@@ -1,8 +1,0 @@
-/home/meursault/Documents/Geant4/Simulation/xenon/build/CMakeFiles/install/strip.dir
-/home/meursault/Documents/Geant4/Simulation/xenon/build/CMakeFiles/install/local.dir
-/home/meursault/Documents/Geant4/Simulation/xenon/build/CMakeFiles/install.dir
-/home/meursault/Documents/Geant4/Simulation/xenon/build/CMakeFiles/list_install_components.dir
-/home/meursault/Documents/Geant4/Simulation/xenon/build/CMakeFiles/rebuild_cache.dir
-/home/meursault/Documents/Geant4/Simulation/xenon/build/CMakeFiles/edit_cache.dir
-/home/meursault/Documents/Geant4/Simulation/xenon/build/CMakeFiles/G01.dir
-/home/meursault/Documents/Geant4/Simulation/xenon/build/CMakeFiles/load_gdml.dir
