@@ -30,7 +30,7 @@
 
 #include "G01EventAction.hh"
 #include "G01RunAction.hh"
-
+#include "HistoManager.hh"
 #include "G4Event.hh"
 #include "G4RunManager.hh"
 
@@ -59,7 +59,10 @@ void G01EventAction::BeginOfEventAction(const G4Event*)
 void G01EventAction::EndOfEventAction(const G4Event*)
 {   
   // accumulate statistics in run action
+  G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
   fRunAction->AddEdep(fEdep);
+  if (fEdep>0){
+  analysisManager->FillH1(5,fEdep); }
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

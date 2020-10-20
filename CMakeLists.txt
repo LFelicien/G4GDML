@@ -40,7 +40,7 @@ target_link_libraries(load_gdml ${Geant4_LIBRARIES} )
 # relies on these scripts being in the current working directory.
 #
 set(G01_SCRIPTS
-    xenon.gdml entity.gdml g01.in g01.out  tess.gdml vis.mac RX.gdml
+    xenon.gdml  vis.mac RX.gdml
   )
 
 foreach(_script ${G01_SCRIPTS})

@@ -104,7 +104,7 @@ G4Track* track = step -> GetTrack();
   G4double edepStep = step->GetTotalEnergyDeposit();
   fEventAction->AddEdep(edepStep); 
   //G4cout<<Positiony<<Positionz<<G4endl; 
-   analysisManager->FillH1(5,edepStep); 
+   //analysisManager->FillH1(5,edepStep); 
    analysisManager->FillH2(6,Positiony,Positionz); 
 }
 

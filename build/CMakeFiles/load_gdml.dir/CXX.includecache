@@ -6,19 +6,17 @@
 
 #IncludeRegexTransform: 
 
-../include/G01DetectorConstruction.hh
-G4VUserDetectorConstruction.hh
-../include/G4VUserDetectorConstruction.hh
-
 ../include/G01EventAction.hh
 G4UserEventAction.hh
 ../include/G4UserEventAction.hh
 globals.hh
 ../include/globals.hh
 
-../include/G01SteppingAction.hh
-G4UserSteppingAction.hh
-../include/G4UserSteppingAction.hh
+../include/G01RunAction.hh
+G4UserRunAction.hh
+../include/G4UserRunAction.hh
+G4Accumulable.hh
+../include/G4Accumulable.hh
 globals.hh
 ../include/globals.hh
 
@@ -462,6 +460,18 @@ CLHEP/Vector/ThreeVector.icc
 cmath
 -
 
+/home/meursault/Documents/Geant4/G4install/include/Geant4/G4Accumulable.hh
+G4VAccumulable.hh
+/home/meursault/Documents/Geant4/G4install/include/Geant4/G4VAccumulable.hh
+G4MergeMode.hh
+/home/meursault/Documents/Geant4/G4install/include/Geant4/G4MergeMode.hh
+globals.hh
+/home/meursault/Documents/Geant4/G4install/include/Geant4/globals.hh
+G4Accumulable.icc
+/home/meursault/Documents/Geant4/G4install/include/Geant4/G4Accumulable.icc
+
+/home/meursault/Documents/Geant4/G4install/include/Geant4/G4Accumulable.icc
+
 /home/meursault/Documents/Geant4/G4install/include/Geant4/G4AffineTransform.hh
 G4Types.hh
 /home/meursault/Documents/Geant4/G4install/include/Geant4/G4Types.hh
@@ -794,14 +804,6 @@ G4GRSVolume.icc
 
 /home/meursault/Documents/Geant4/G4install/include/Geant4/G4GRSVolume.icc
 
-/home/meursault/Documents/Geant4/G4install/include/Geant4/G4Gamma.hh
-globals.hh
-/home/meursault/Documents/Geant4/G4install/include/Geant4/globals.hh
-G4ios.hh
-/home/meursault/Documents/Geant4/G4install/include/Geant4/G4ios.hh
-G4ParticleDefinition.hh
-/home/meursault/Documents/Geant4/G4install/include/Geant4/G4ParticleDefinition.hh
-
 /home/meursault/Documents/Geant4/G4install/include/Geant4/G4GeomSplitter.hh
 globals.hh
 /home/meursault/Documents/Geant4/G4install/include/Geant4/globals.hh
@@ -1010,6 +1012,14 @@ G4PhysicsOrderedFreeVector.hh
 
 /home/meursault/Documents/Geant4/G4install/include/Geant4/G4MaterialTable.hh
 vector
+-
+
+/home/meursault/Documents/Geant4/G4install/include/Geant4/G4MergeMode.hh
+globals.hh
+/home/meursault/Documents/Geant4/G4install/include/Geant4/globals.hh
+functional
+-
+cmath
 -
 
 /home/meursault/Documents/Geant4/G4install/include/Geant4/G4NavigationHistory.hh
@@ -2100,6 +2110,10 @@ globals.hh
 
 /home/meursault/Documents/Geant4/G4install/include/Geant4/G4UserEventAction.hh
 
+/home/meursault/Documents/Geant4/G4install/include/Geant4/G4UserRunAction.hh
+G4Types.hh
+/home/meursault/Documents/Geant4/G4install/include/Geant4/G4Types.hh
+
 /home/meursault/Documents/Geant4/G4install/include/Geant4/G4UserStackingAction.hh
 G4ClassificationOfNewTrack.hh
 /home/meursault/Documents/Geant4/G4install/include/Geant4/G4ClassificationOfNewTrack.hh
@@ -2107,6 +2121,14 @@ G4ClassificationOfNewTrack.hh
 /home/meursault/Documents/Geant4/G4install/include/Geant4/G4UserSteppingAction.hh
 
 /home/meursault/Documents/Geant4/G4install/include/Geant4/G4UserTrackingAction.hh
+
+/home/meursault/Documents/Geant4/G4install/include/Geant4/G4VAccumulable.hh
+globals.hh
+/home/meursault/Documents/Geant4/G4install/include/Geant4/globals.hh
+G4VAccumulable.icc
+/home/meursault/Documents/Geant4/G4install/include/Geant4/G4VAccumulable.icc
+
+/home/meursault/Documents/Geant4/G4install/include/Geant4/G4VAccumulable.icc
 
 /home/meursault/Documents/Geant4/G4install/include/Geant4/G4VAnalysisManager.hh
 G4AnalysisManagerState.hh
@@ -2381,12 +2403,6 @@ map
 -
 G4ThreeVector.hh
 /home/meursault/Documents/Geant4/G4install/include/Geant4/G4ThreeVector.hh
-
-/home/meursault/Documents/Geant4/G4install/include/Geant4/G4VUserDetectorConstruction.hh
-vector
--
-globals.hh
-/home/meursault/Documents/Geant4/G4install/include/Geant4/globals.hh
 
 /home/meursault/Documents/Geant4/G4install/include/Geant4/G4VUserEventInformation.hh
 
@@ -3320,23 +3336,15 @@ vector
 G4Types.hh
 /home/meursault/Documents/Geant4/G4install/include/Geant4/G4Types.hh
 
-/home/meursault/Documents/Geant4/Simulation/xenon/src/G01SteppingAction.cc
-G01SteppingAction.hh
-/home/meursault/Documents/Geant4/Simulation/xenon/src/G01SteppingAction.hh
+/home/meursault/Documents/Geant4/Simulation/xenon/src/G01EventAction.cc
 G01EventAction.hh
 /home/meursault/Documents/Geant4/Simulation/xenon/src/G01EventAction.hh
-G01DetectorConstruction.hh
-/home/meursault/Documents/Geant4/Simulation/xenon/src/G01DetectorConstruction.hh
+G01RunAction.hh
+/home/meursault/Documents/Geant4/Simulation/xenon/src/G01RunAction.hh
 HistoManager.hh
 /home/meursault/Documents/Geant4/Simulation/xenon/src/HistoManager.hh
-G4Gamma.hh
--
-G4Step.hh
-/home/meursault/Documents/Geant4/Simulation/xenon/src/G4Step.hh
 G4Event.hh
 /home/meursault/Documents/Geant4/Simulation/xenon/src/G4Event.hh
 G4RunManager.hh
 /home/meursault/Documents/Geant4/Simulation/xenon/src/G4RunManager.hh
-G4LogicalVolume.hh
-/home/meursault/Documents/Geant4/Simulation/xenon/src/G4LogicalVolume.hh
 
